@@ -1,0 +1,98 @@
+
+/** Page general styling **/
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #ffffff;
+  }
+  
+  h2 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  
+  .special-text {
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  
+  .larg-text {
+    font-size: 1.3em;
+    line-height: 40px;
+  }
+
+  .navbar {
+    border-radius: 0px !important;
+    margin: 0px;
+  }
+  
+  .navbar li {
+    margin: 0 20px;
+    font-size: 1.2em;
+  }
+  
+  .active{
+    transition:0.5s;
+    background-color:#ddd;
+  }
+  
+/** Styling the header { #about } **/
+
+  header p {
+    font-size: 1.5em;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 50px;
+  }
+  
+  header > p,
+  h1 {
+    text-shadow: 1px 1px 2px #555;
+  }
+  
+  header {
+    padding-top: 10%;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://cdn.pixabay.com/photo/2017/07/31/11/46/laptop-2557586_960_720.jpg);
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+  }
+  
+  /** Styling the Contact Section **/
+  #contact {
+    height: 100vh;
+  }
+  
+  #contact h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  
+  /** Styling the social section **/
+
+  #social {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(20, 20, 20, 0.9);
+  }
+  
+  #social .button-group a {
+    font-size: 2em;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff !important;
+  }
+  
+  .special-small-text {
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
+  
