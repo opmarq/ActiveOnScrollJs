@@ -1,48 +1,52 @@
-const navButtons = document.querySelectorAll(".active-scroll li a");
+(function () {
 
-// will hold the ids and positions
-let positions = [];
+    const navButtons = document.querySelectorAll(".active-scroll li a");
 
-const addActive = function (id) {
+    // will hold the ids and positions
+    let positions = [];
 
-    // clear actives
-    navButtons.forEach(a => a.parentNode.classList.remove("active"));
+    const addActive = function (id) {
 
-    // add active class
-    document.querySelector(`a[href='#${id}']`).parentNode.classList.add("active");
+        // clear actives
+        navButtons.forEach(a => a.parentNode.classList.remove("active"));
 
-};
+        // add active class
+        document.querySelector(`a[href='#${id}']`).parentNode.classList.add("active");
 
-navButtons.forEach(function (navButton) {
+    };
 
-    // extracting the ids from each navButton
-    const id = navButton.href.split("#")[1];
+    navButtons.forEach(function (navButton) {
 
-    const pageSection = document.querySelector(`#${id}`);
+        // extracting the ids from each navButton
+        const id = navButton.href.split("#")[1];
 
-    positions.push(
-        {
-            id: pageSection.id,
-            offsetTop: pageSection.offsetTop,
+        const pageSection = document.querySelector(`#${id}`);
+
+        positions.push(
+            {
+                id: pageSection.id,
+                offsetTop: pageSection.offsetTop,
+            }
+        );
+    });
+
+    // sorting biggest
+    positions.sort((a, b) => b.offsetTop - a.offsetTop);
+
+
+    activeOnScroll = function () {
+
+        for (let i = 0; i < positions.length; i++) {
+
+            if (window.scrollY > positions[i].offsetTop) {
+                addActive(positions[i].id);
+                break;
+            }
         }
-    );
-});
 
-// sorting biggest
-positions.sort((a, b) => b.offsetTop - a.offsetTop);
-
-
-activeOnScroll = function(){
-    
-    for (let i = 0; i < positions.length; i++) {
-
-        if (window.scrollY > positions[i].offsetTop) {
-            addActive(positions[i].id);
-            break;
-        }
     }
 
-}
+    window.addEventListener("scroll", activeOnScroll);
 
-window.addEventListener("scroll", activeOnScroll);
 
+})();
